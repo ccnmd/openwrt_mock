@@ -26,7 +26,6 @@ build:
 			echo 'src-link mypkg /mypkg' >> feeds.conf.default && \
 			./scripts/feeds update -a && \
 			./scripts/feeds install -a && \
-			sed -i 's/^# CONFIG_PACKAGE_python-check is not set$/CONFIG_PACKAGE_python-check=y/' .config && \
 			make -j8 \
 		"
 
@@ -34,5 +33,5 @@ package:
 	docker start $(CONTAINER_NAME)
 	docker exec -it $(CONTAINER_NAME) bash -c "\
 			cd /build/openwrt/bin/packages/arm_cortex-a8_vfpv3/mypkg && \
-			cp *.ipk /build/pkg-output \
+			cp *.apk /build/pkg-output \
 		"
