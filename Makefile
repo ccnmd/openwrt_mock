@@ -34,5 +34,5 @@ package:
 	docker start $(CONTAINER_NAME)
 	docker exec -it $(CONTAINER_NAME) bash -c "\
 			cd /build/openwrt/bin/packages/arm_cortex-a8_vfpv3/mypkg && \
-			cp *.ipk /build/pkg-output \
+			cp *.apk /build/pkg-output \
 		"
