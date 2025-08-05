@@ -32,7 +32,7 @@ int main() {
     // print on terminal
     printf("%s", version);
 
-    // write log to file
+    // write log into file
     FILE *log_fp = fopen(LOG_FILE, "w");
     if (log_fp != NULL) {
         fprintf(log_fp, "%s", version);
