@@ -12,30 +12,33 @@ Features
 How to Use
 1. Clone this repo
 
-git clone https://github.com/ccnmd/openwrt_mock.git
-git checkout feature/python_version_check
+        git clone https://github.com/ccnmd/openwrt_mock.git
+        git checkout feature/python_version_check
 
 2. Build the Docker image
-make docker-image
 
-3. Build OpenWRT image
+       make docker-image
 
-make create
+4. Build OpenWRT image
 
-4. Flash to SD card
+       make create
+
+5. Flash to SD card
 
 Extract and flash using Raspberry Pi Imager or dd:
 
-gzip -d openwrt-omap-generic-ti_am335x-bone-black-ext4-sdcard.img.gz 
-sudo dd if=openwrt-omap-generic-ti_am335x-bone-black-ext4-sdcard.img of=/dev/sda bs=4M status=progress conv=fsync
+    gzip -d openwrt-omap-generic-ti_am335x-bone-black-ext4-sdcard.img.gz 
+    sudo dd if=openwrt-omap-generic-ti_am335x-bone-black-ext4-sdcard.img of=/dev/sda bs=4M status=progress conv=fsync
 
 Replace /dev/sdX with your actual SD card device.
 Verify on BBB
 
 After booting the device:
 
-python3 --version
+        cd /
+        cd /usr/bin
+        check-python
 
-check_python
+
 
 
